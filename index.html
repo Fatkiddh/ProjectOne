@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Travel API</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+  </head>
+  <body>
+
+<div class="container">
+  <div class="col">
+    <div class="row">
+          <table class="table text-center">
+            <thead>
+              <tr id="flights">
+                <th>#</th>
+                <th id="departureAirport">Airport(departure) |</th>
+                <th id="arrivalAirport">Airport(Arrival) |</th>
+                <th id="departureDate">departure date |</th>
+                <th id="return date">return date |</th>
+                <th id="Price">Price |</th>
+                <th id="airline">airline</th>
+
+              </tr>
+            </thead>
+
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                </tr>
+              </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+
+  <div class="container">
+    <div class="col">
+      <div class="row">
+        <div id="weather">
+          <table class="table text-center">
+            <thead class="thead-inverse">
+              <tr>
+                <th>5 day forcast</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wensday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"></th>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="searchBar">
+    <input type="text" name="airports" id="autocomplete" placeholder="LAX">
+    <button id="searchButton" onclick="getFlights()" >search</button>
+  </div>
+
+
+
+
+
+    <script src="app.js" charset="utf-8"></script>
+
+  </body>
+</html>
