@@ -1,4 +1,0 @@
-function apis(){
-  getFlights();
-  getWeather();
-}
