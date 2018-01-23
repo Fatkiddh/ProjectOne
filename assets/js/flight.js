@@ -20,7 +20,7 @@
 
 
 // var swaggerClient = new SwaggerClient(specUrl);
-var apiKey = 'nv7Usmj1o5jdTW3rGLHXa3ymwHHSLfQi';
+var apiKey = '2JLTZ1Hrikb8Fj3JzIApqvYUP7RfOdom';
 
 // var departure = "";
 // var destination = "";
@@ -44,7 +44,7 @@ $("#destinationInput").change(function(){
        const getFlights = () => {
          console.log('click');
          $.ajax({
-           // url: `https://api.sandbox.amadeus.com/v1.2/flights/extensive-search?origin=${departure}&destination=${destination}&departure_date=2018-02--2018-06&duration=5--7&apikey=${apiKey}`,
+           url: `https://api.sandbox.amadeus.com/v1.2/flights/extensive-search?origin=${departure}&destination=${destination}&departure_date=2018-02--2018-06&duration=5--7&apikey=${apiKey}`,
               // url: `https: api.sandbox.amadeus.com/v1.2/points-of-interest/yapq-search-text?city_name=New%20York&image_size=HD&category=zoo&;apikey=${apiKey}`
            method: 'GET',
         }).done(function response(response){
