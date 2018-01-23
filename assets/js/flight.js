@@ -47,7 +47,7 @@ $("#destinationInput").change(function(){
         }).done(function response(response){
         // console.log(response);
 
-          // console.log(response.results);
+          console.log(response.results);
 
           let searchResults = response.results;
           let departure = response.origin;

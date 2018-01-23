@@ -1,8 +1,8 @@
 let luigiKey = `53377696a03f2e041c102d0eefcf9db8`;
 let kelvinMax = ``;
 let kelvinMin = ``;
-// Interpolate these. Wait on Ryan's function or help structure one to take both.
-let city ="orange";
+let city ="";
+
 const getWeather = () => {
   console.log('click');
   $.ajax({
@@ -15,11 +15,13 @@ const getWeather = () => {
     // Convert user text into
     let high = (kelvinMax-273.15)*1.8+32;
     let low = (kelvinMin-273.15)*1.8+32;
-    console.log(high);
-    console.log(low);
+    console.log(high + '&#x2109;');
+    console.log(low + '&#x2109;');
   });
-}// Closes getWeat`her function
+}// Closes getWeather function
+
 // AJAX Weather Call
+
 getWeather();
 
 // Table Body is appended with interpolated temperatures
