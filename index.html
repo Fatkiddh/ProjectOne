@@ -4,17 +4,21 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css">
+
   <!-- External Stylesheets -->
   <link rel="stylesheet" href="assets/css/style.css">
   <title>Travel App</title>
 </head>
 <body>
+
+
   <div class="jumbotron">
     <div class="container">
-      <center><h1 class="display-4">Travel App</h1></center>
+      <center><b><h1 class="display-4">Team Torvalds Travel</h1></b></center>
       <center><p class="lead">We provide the cheapest airfare prices on one way tickets out of town!</p>
         <hr class="my-4">
         <p>Just tell us where you want to go and when you want to leave. We'll do the rest!</p>
@@ -24,12 +28,15 @@
           Date: <input type="date" name="Date">
         </form>
         <br>
-        <button data-target="#myModal" class="btn btn-outline-danger" data-toggle="modal" >Search</button>
+        <button data-target="#myModal" class="btn btn-primary btn-lg" data-toggle="modal" >Search</button>
       </div>
     </div>
+
+
     <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -37,14 +44,19 @@
         <h4 class="modal-title">Please confirm</h4>
       </div>
       <div class="modal-body">
-        <p>Make sure your airport selections are correct</p>
+        <p>Make sure your information is correct</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-primary" ><a href="https://www.google.com">Confirm</a></button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Edit</button>
       </div>
     </div>
+
   </div>
 </div>
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
