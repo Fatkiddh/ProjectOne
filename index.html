@@ -21,31 +21,36 @@
         <form action="/action_page.php">
           Departing from: <input type="text" name="airports" id="departureInput" placeholder="departure" maxlength="3">
           Arriving at: <input type="text" name="airports" id="destinationInput" placeholder="destination" maxlength="3">
-          Staying: <input type="text" name="airports" id="staying" placeholder="City">
+          Staying: <input type="text" name="airports" id="staying" placeholder="Where are you staying?">
           Date: <input type="date" name="Date">
         </form>
         <br>
-        <button data-target="#myModal" class="btn btn-outline-danger" data-toggle="modal" onclick="apis()" >Search</button>
+        <button data-target="#myModal" class="btn btn-outline-danger" data-toggle="modal" onclick="apis();">Search</button>
       </div>
     </div>
-    <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Please confirm</h4>
-      </div>
-      <div class="modal-body">
-        <p>Make sure your airport selections are correct</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
+
+<div class="containter-fluid">
+  <table id="trip-table">
+      <thead>
+        <tr class="item-2">
+          <th>Trip Name</th>
+          <th>Destination</th>
+          <th>Departure</th>
+          <th>High</th>
+          <th>Low</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
