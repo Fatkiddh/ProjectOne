@@ -1,8 +1,0 @@
-.jumbotron {
-  /* Background image was missing-replaced it
-  with suitable dummy-file and fixed path
-  -Luigi */
-    background: url("../images/paradise.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
