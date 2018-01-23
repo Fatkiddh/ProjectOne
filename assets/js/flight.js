@@ -38,20 +38,16 @@ $("#destinationInput").change(function(){
 }); // closes change function
 
 
-
-
-    // console.log('what is my destination: ' + destination);
        const getFlights = () => {
          console.log('click');
          $.ajax({
            url: `https://api.sandbox.amadeus.com/v1.2/flights/extensive-search?origin=${departure}&destination=${destination}&departure_date=2018-02--2018-06&duration=5--7&apikey=${apiKey}`,
               // url: `https: api.sandbox.amadeus.com/v1.2/points-of-interest/yapq-search-text?city_name=New%20York&image_size=HD&category=zoo&;apikey=${apiKey}`
-           method: 'GET',
+           method: 'GET',
         }).done(function response(response){
         // console.log(response);
 
-
-            console.log(response.results);
+          // console.log(response.results);
 
           let searchResults = response.results;
           let departure = response.origin;
@@ -66,11 +62,9 @@ $("#destinationInput").change(function(){
           console.log("we are leaving on year/month/day: " + departureDate);
           console.log('we will be back on year/month/day: ' + returnDate);
 
-
-
+          $("#trip-table > tbody").append("<tr><td>" + departure + "</td><td>" + destination + "</td><td>");
 
         }); // close response function
-
 
 
        } // closes getDeparture

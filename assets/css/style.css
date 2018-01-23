@@ -2,10 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 0px;
     background:linear-gradient(rgba(0, 0, 250, 0.25), rgba(125, 250, 250, 0.45)),
     url(http://www.itsfrontporch.com/wp-content/uploads/6359524176194484221446729975_travel-01.jpg);
-    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color:white !important;
@@ -15,7 +13,6 @@
 .lead {
     font-size: 26px;
 }
-
 p {
     font-size: 21;
 }
