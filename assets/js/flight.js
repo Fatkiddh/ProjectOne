@@ -57,7 +57,6 @@ const getFlights = () => {
   console.log('click');
   $.ajax({
     url: `https://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?apikey=${apiKey}&origin=${departure}&destination=${destination}&departure_date=${departure_date}&return_date=2018&arrive_by=${departure_date}T05%3A25&return_by=${return_date}T05%3A25&nonstop=false&max_price=${cost}&currency=USD&travel_class=ECONOMY&number_of_results=5`,
-    // url:`http://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?origin=${departure}&destination=${destination}&departure_date=${departure_date}&return_date=${return_date}&number_of_results=5&apikey=${apiKey}`,
 
     method: 'GET',
   }).done(function response(response){
