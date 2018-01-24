@@ -18,20 +18,27 @@ p {
 .jumbotron h1 {
     color: #1E90FF;
     font-weight: bolder;
+    text-shadow: 1px 1px black;
 }
 
 .jumbotron p {
     color: #1E90FF;
     font-weight: bold;
+    text-shadow: 1px 1px black;
+
 }
 
 .jumbotron form {
     color: #1E90FF;
     margin: 70px;
+    text-shadow: 1px 1px black;
+
 }
 
 .jumbotron button {
     color: #1E90FF;
+    text-shadow: 1px 1px black;
+
 }
 
 footer {

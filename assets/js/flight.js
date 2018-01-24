@@ -24,8 +24,8 @@ var apiKey = '2JLTZ1Hrikb8Fj3JzIApqvYUP7RfOdom';
 
 var departure = "";
 var destination = "";
-
-
+let departure_date ="";
+let return_date ="";
 // uses the input of the user to pass into the api parameter for departure
 $("#departureInput").change(function(){
   departure = $(this).val();
@@ -38,47 +38,57 @@ $("#destinationInput").change(function(){
   console.log("this is user input: " + destination)
 }); // closes change function
 
-// $("#departureDate").change(function(){
-//   departure_date = moment("#departureDate", "YYYY-MM").isValid();
-//   console.log(departure_date);
-// });
+$("#departureDate").change(function(){
+  departure_date = $(this).val();
+  console.log(departure_date);
+});
 
+$("#returnDate").change(function(){
+  return_date = $(this).val();
+  console.log(departure_date);
+});
+
+$("#cost").change(function(){
+  cost = $(this).val();
+  console.log(cost);
+});
 
 const getFlights = () => {
   console.log('click');
   $.ajax({
-    url: `https://api.sandbox.amadeus.com/v1.2/flights/extensive-search?origin=${departure}&destination=${destination}&departure_date=2018-02--2018-06&duration=5--7&apikey=${apiKey}`,
-    // url: `https: api.sandbox.amadeus.com/v1.2/points-of-interest/yapq-search-text?city_name=New%20York&image_size=HD&category=zoo&;apikey=${apiKey}`
+    url: `https://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?apikey=${apiKey}&origin=${departure}&destination=${destination}&departure_date=${departure_date}&return_date=2018&arrive_by=${departure_date}T05%3A25&return_by=${return_date}T05%3A25&nonstop=false&max_price=${cost}&currency=USD&travel_class=ECONOMY&number_of_results=5`,
+    // url:`http://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?origin=${departure}&destination=${destination}&departure_date=${departure_date}&return_date=${return_date}&number_of_results=5&apikey=${apiKey}`,
+
     method: 'GET',
   }).done(function response(response){
     // console.log(response);
-
-
-    let searchResults = response.results;
-    let departure = response.origin;
-    let destination = response.results[0].destination;
-    let returnDate = response.results[0].return_date;
-    let departureDate = response.results[0].departure_date;
-    let price = response.results[0].price;
-
-
-
-
-    console.log(searchResults);
-    console.log('we will be flying out of: ' + departure);
-    console.log("we will be arriving at: " + destination);
-    console.log("we are leaving on year/month/day: " + departureDate);
-    console.log('we will be back on year/month/day: ' + returnDate);
-    console.log('price of the flight is : ' + price);
-
-
-    for (i = 0; i <= response.results.length; i++) {
-      departureDate = response.results[i*100].departure_date;
-      price = response.results[i*100].price;
-      returnDate = response.results[i*100].return_date;
-      console.log(`price:${price}`);
-      $("#trip-table > tbody").append("<tr><td>" + departure + "</td><td>" + destination + "</td><td>" + departureDate + "</td><td>" + returnDate + "</td><td>" + price + "</td><td>" );
-    }
+console.log(response);
+    //
+    // let searchResults = response.results;
+    // let departure = response.origin;
+    // let destination = response.results[0].destination;
+    // let returnDate = response.results[0].return_date;
+    // let departureDate = response.results[0].departure_date;
+    // let price = response.results[0].price;
+    //
+    //
+    //
+    //
+    // console.log(searchResults);
+    // console.log('we will be flying out of: ' + departure);
+    // console.log("we will be arriving at: " + destination);
+    // console.log("we are leaving on year/month/day: " + departureDate);
+    // console.log('we will be back on year/month/day: ' + returnDate);
+    // console.log('price of the flight is : ' + price);
+    //
+    //
+    // for (i = 0; i <= response.results.length; i++) {
+    //   departureDate = response.results[i*100].departure_date;
+    //   price = response.results[i*100].price;
+    //   returnDate = response.results[i*100].return_date;
+    //   console.log(`price:${price}`);
+    //   $("#trip-table > tbody").append("<tr><td>" + departure + "</td><td>" + destination + "</td><td>" + departureDate + "</td><td>" + returnDate + "</td><td>" + price + "</td><td>" );
+    // }
 
 });
   } // closes getDeparture
