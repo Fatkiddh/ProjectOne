@@ -15,8 +15,10 @@ const getWeather = () => {
     // Convert user text into
     let high = (kelvinMax-273.15)*1.8+32;
     let low = (kelvinMin-273.15)*1.8+32;
-    console.log(high + '&#x2109;');
-    console.log(low + '&#x2109;');
+    high = high.toFixed(1);
+    low = low.toFixed(1);
+    console.log(low);
+    console.log(high);
   });
 }// Closes getWeather function
 
