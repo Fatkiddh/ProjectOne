@@ -29,10 +29,10 @@ const getWeather = () => {
     let low = (kelvinMin-273.15)*1.8+32;
     high = high.toFixed(1);
     low = low.toFixed(1);
-    console.log(low);
-    console.log(high);
-    console.log(currentTemperature);
-    console.log(humidity);
+    console.log(`low: ${low}`);
+    console.log(`high: ${high}`);
+    console.log(`currentTemperature: ${currentTemperature}`);
+    console.log(`humidity: ${humidity}`);
     // Table Body is appended with interpolated temperatures
     $("#trip-table > tbody").append(`<tr><td>${high}</td><td>${low}</td><td>`);
 
