@@ -4,89 +4,52 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css">
 
+  <link rel="stylesheet" href="bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css">
   <!-- External Stylesheets -->
   <link rel="stylesheet" href="assets/css/style.css">
   <title>Travel App</title>
 </head>
 <body>
-
   <div class="jumbotron">
     <div class="container">
-        <center><b><h1 class="display-4">Team Torvalds Travel</h1></b></center>
-        <center><p class="lead">We provide the cheapest airfare prices on one way tickets out of town!</p>
-          <hr class="my-4">
-          <p>Just tell us where you want to go and when you want to leave. We'll do the rest!</p>
-          <br>
-          <form action="/action_page.php">
-            <input type="text" placeholder="Flying from"> &nbsp; &nbsp;
-            <input type="text" placeholder="Flying to"> &nbsp; &nbsp;
-            <input type="date" name="Date">
-          </form>
-          <br>
-          <button data-target="#myModal" class="btn btn-primary btn-lg" data-toggle="modal" >Search</button>
-        </div>
-      </div>
-
-
-    <div class="container-fluid">
-        <div class="row">
-          <div class="panel panel-success">
-              <div class="panel-heading col-md-12">
-                <h4 class="col-md-6" id="icon"><i class = "fa fa-train fa-lg"></i>    Flights</h4>
-                <h4 class="col-md-6" id="clock"><span id = "currentTime"></span></h4>
-              </div>
-              <div class="panel-body">
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th>Airline</th>
-                      <th>Departure City</th>
-                      <th>Arrival City</th>
-                      <th>Date</th>
-                      <th>Time</th>
-                    </tr>
-                  </thead>
-                  <tbody id = "schedule">
-
-                  </tbody>
-
-                </table>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-    <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Please confirm</h4>
-      </div>
-      <div class="modal-body">
-        <p>Make sure your information is correct</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-primary" ><a href="https://www.google.com">Confirm</a></button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Edit</button>
+      <center><h1 class="display-4">Travel App</h1></center>
+      <center><p class="lead">We provide the cheapest airfare prices on one way tickets out of town!</p>
+        <hr class="my-4">
+        <p>Just tell us where you want to go and when you want to leave. We'll do the rest!</p>
+        <form action="/action_page.php">
+          Departing from: <input type="text" name="airports" id="departureInput" placeholder="departure" maxlength="3">
+          Arriving at: <input type="text" name="airports" id="destinationInput" placeholder="destination" maxlength="3">
+          Staying: <input type="text" name="airports" id="staying" placeholder="Where are you staying?">
+          Date: <input type="date" name="Date">
+        </form>
+        <br>
+        <button data-target="#myModal" class="btn btn-outline-danger" data-toggle="modal" onclick="apis();">Search</button>
       </div>
     </div>
-
+      </div>
+    </div>
   </div>
 </div>
 
-<footer>
-  <p>Created by: Team Torvalds (Ryan, Luigi, Sarah, Robel)</p>
-</footer>
+<div class="containter-fluid">
+  <table id="trip-table">
+      <thead>
+        <tr class="item-2">
+          <th>Trip Name</th>
+          <th>Destination</th>
+          <th>Departure</th>
+          <th>High</th>
+          <th>Low</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -94,7 +57,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/js/flight.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/weather.js"></script>
+
   </body>
   </html>
