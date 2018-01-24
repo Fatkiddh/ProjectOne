@@ -19,12 +19,12 @@ const getWeather = () => {
     low = low.toFixed(1);
     console.log(low);
     console.log(high);
+    // Table Body is appended with interpolated temperatures
+    $("#trip-table > tbody").append(`<tr><td>${high}</td><td>${low}</td><td>`);
   });
+
 }// Closes getWeather function
 
 // AJAX Weather Call
 
 getWeather();
-
-// Table Body is appended with interpolated temperatures
-$("#trip-table > tbody").append(`<tr><td>${high}</td><td>${low}</td><td>`);
