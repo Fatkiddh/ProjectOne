@@ -60,34 +60,15 @@ const getFlights = () => {
 
     method: 'GET',
   }).done(function response(response){
-    // console.log(response);
-console.log(response);
-    //
-    // let searchResults = response.results;
-    // let departure = response.origin;
-    // let destination = response.results[0].destination;
-    // let returnDate = response.results[0].return_date;
-    // let departureDate = response.results[0].departure_date;
-    // let price = response.results[0].price;
-    //
-    //
-    //
-    //
-    // console.log(searchResults);
-    // console.log('we will be flying out of: ' + departure);
-    // console.log("we will be arriving at: " + destination);
-    // console.log("we are leaving on year/month/day: " + departureDate);
-    // console.log('we will be back on year/month/day: ' + returnDate);
-    // console.log('price of the flight is : ' + price);
-    //
-    //
-    // for (i = 0; i <= response.results.length; i++) {
-    //   departureDate = response.results[i*100].departure_date;
-    //   price = response.results[i*100].price;
-    //   returnDate = response.results[i*100].return_date;
-    //   console.log(`price:${price}`);
-    //   $("#trip-table > tbody").append("<tr><td>" + departure + "</td><td>" + destination + "</td><td>" + departureDate + "</td><td>" + returnDate + "</td><td>" + price + "</td><td>" );
-    // }
-
+    console.log(response);
+    let prices = response.results[0].fare.total_price;
+    console.log(prices);
+// Loop through Key-Value pairs
+    for (i = 0; i <response.results.length; i++) {
+      // Access and store total_price
+      prices = response.results[i].fare.total_price;
+      console.log(prices);
+       $("#trip-table > tbody").append(`<tr><td>${destination}</td><td>${departure}</td><td>${departure_date}</td><td>${return_date}</td><td>${prices}</td></tr>`
+    )}
 });
   } // closes getDeparture
