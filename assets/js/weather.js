@@ -26,11 +26,9 @@ const getWeather = () => {
     console.log(low);
     console.log(high);
     // Table Body is appended with interpolated temperatures
-    $("#trip-table > tbody").append(`<tr><td>${high}</td><td>${low}</td><td>`);
+    $("#trip-table > tbody:nth-child(2)").append(`<tr><td>${high}</td><td>${low}</td><td>`);
   });
 
 }// Closes getWeather function
 
 // AJAX Weather Call
-
-getWeather();

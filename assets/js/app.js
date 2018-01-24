@@ -1,4 +1,4 @@
 let apis = function (){
-  // getFlights();
+  getFlights();
   getWeather();
 };
