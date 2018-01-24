@@ -3,8 +3,14 @@ let kelvinMax = ``;
 let kelvinMin = ``;
 let city ="";
 
+// Targets city/staying form ID and gets input
+$("#staying").change(function(){
+  city = $(this).val();
+  console.log("this is user input: " + city)
+}); // closes change function
 const getWeather = () => {
   console.log('click');
+  console.log(city);
   $.ajax({
     url: `http://api.openweathermap.org/data/2.5/forecast?q=${city},3166-2&APPID=${luigiKey}`,
     method: 'GET',
