@@ -1,18 +1,39 @@
-.jumbotron{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background:linear-gradient(rgba(0, 0, 250, 0.25), rgba(125, 250, 250, 0.45)),
-    url(http://www.itsfrontporch.com/wp-content/uploads/6359524176194484221446729975_travel-01.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color:white !important;
-    height: 100vh;
+.jumbotron {
+   margin-bottom: 0px;
+   background-image: url(http://www.itsfrontporch.com/wp-content/uploads/6359524176194484221446729975_travel-01.jpg);
+   background-position: 0% 45%;
+   background-size: cover;
+   background-repeat: no-repeat;
+   color: white;
 }
-/*testing*/
+
 .lead {
     font-size: 26px;
 }
+
 p {
     font-size: 21;
+}
+
+.jumbotron h1 {
+    color: #1E90FF;
+    font-weight: bolder;
+}
+
+.jumbotron p {
+    color: #1E90FF;
+    font-weight: bold;
+}
+
+.jumbotron form {
+    color: #1E90FF;
+    margin: 70px;
+}
+
+.jumbotron button {
+    color: #1E90FF;
+}
+
+footer {
+    display: block;
 }
