@@ -66,5 +66,4 @@ $("#destinationInput").change(function(){
 
         }); // close response function
 
-
        } // closes getDeparture
