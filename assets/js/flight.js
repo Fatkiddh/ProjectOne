@@ -57,9 +57,10 @@ const getFlights = () => {
     let searchResults = response.results;
     let departure = response.origin;
     let destination = response.results[0].destination;
-    let departureDate = response.results[0].departure_date;
     let returnDate = response.results[0].return_date;
+    let departureDate = response.results[0].departure_date;
     let price = response.results[0].price;
+
 
 
 
@@ -71,10 +72,13 @@ const getFlights = () => {
     console.log('price of the flight is : ' + price);
 
 
-    for (var i = 0; i < 5; i++) {
+    for (i = 0; i <= response.results.length; i++) {
+      departureDate = response.results[i*100].departure_date;
       price = response.results[i*100].price;
+      returnDate = response.results[i*100].return_date;
+      console.log(`price:${price}`);
       $("#trip-table > tbody").append("<tr><td>" + departure + "</td><td>" + destination + "</td><td>" + departureDate + "</td><td>" + returnDate + "</td><td>" + price + "</td><td>" );
-
     }
+
 });
   } // closes getDeparture
