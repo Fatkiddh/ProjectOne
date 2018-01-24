@@ -22,8 +22,9 @@
 // var swaggerClient = new SwaggerClient(specUrl);
 var apiKey = '2JLTZ1Hrikb8Fj3JzIApqvYUP7RfOdom';
 
-// var departure = "";
-// var destination = "";
+var departure = "";
+var destination = "";
+
 
 // uses the input of the user to pass into the api parameter for departure
 $("#departureInput").change(function(){
@@ -37,6 +38,11 @@ $("#destinationInput").change(function(){
   console.log("this is user input: " + destination)
 }); // closes change function
 
+// $("#departureDate").change(function(){
+//   departure_date = moment("#departureDate", "YYYY-MM").isValid();
+//   console.log(departure_date);
+// });
+
 
        const getFlights = () => {
          console.log('click');
@@ -47,23 +53,32 @@ $("#destinationInput").change(function(){
         }).done(function response(response){
         // console.log(response);
 
-          console.log(response.results);
 
           let searchResults = response.results;
           let departure = response.origin;
           let destination = response.results[0].destination;
           let departureDate = response.results[0].departure_date;
           let returnDate = response.results[0].return_date;
+          let price = response.results[0].price;
 
 
-          // console.log(searchResults);
+
+          console.log(searchResults);
           console.log('we will be flying out of: ' + departure);
           console.log("we will be arriving at: " + destination);
           console.log("we are leaving on year/month/day: " + departureDate);
           console.log('we will be back on year/month/day: ' + returnDate);
+          console.log('price of the flight is : ' + price);
 
-          $("#trip-table > tbody").append("<tr><td>" + departure + "</td><td>" + destination + "</td><td>");
 
+        // ittetes through function 3 times appending each to the last and then stopping.
+          $(response).each(response.result, function(i){
+          $("#trip-table > tbody").append("<tr><td>" + departure + "</td><td>" + destination + "</td><td>" + departureDate + "</td><td>" + returnDate + "</td><td>" + price + "</td><td>" );
+          if (i == 2){
+            return false;
+          }
+        });
         }); // close response function
 
        } // closes getDeparture
+	   
