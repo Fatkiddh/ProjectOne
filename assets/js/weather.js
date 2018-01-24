@@ -35,8 +35,6 @@ const getWeather = () => {
     console.log(humidity);
     // Table Body is appended with interpolated temperatures
     $("#trip-table > tbody").append(`<tr><td>${high}</td><td>${low}</td><td>`);
-  });
 
+});
 }// Closes getWeather function
-
-// AJAX Weather Call
