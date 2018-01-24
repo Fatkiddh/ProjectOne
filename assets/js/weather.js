@@ -1,7 +1,9 @@
 let luigiKey = `53377696a03f2e041c102d0eefcf9db8`;
+let kelvinCurrent =``;
 let kelvinMax = ``;
 let kelvinMin = ``;
-let city ="";
+let city =``;
+let humidity=``;
 
 // Targets city/staying form ID and gets input
 $("#staying").change(function(){
@@ -16,17 +18,23 @@ const getWeather = () => {
     method: 'GET',
   }).done(function response(response){
     // Store object values for High and Low temp
+    console.log(response);
+    humidity = response.list[0].main.humidity;
+    kelvinCurrent = response.list[0].main.temp;
     kelvinMax = response.list[0].main.temp_max;
     kelvinMin = response.list[0].main.temp_min;
     // Convert user text into
+    let currentTemperature = (kelvinCurrent-273.15)*1.8+32;
     let high = (kelvinMax-273.15)*1.8+32;
     let low = (kelvinMin-273.15)*1.8+32;
     high = high.toFixed(1);
     low = low.toFixed(1);
     console.log(low);
     console.log(high);
+    console.log(currentTemperature);
+    console.log(humidity);
     // Table Body is appended with interpolated temperatures
-    $("#trip-table > tbody:nth-child(2)").append(`<tr><td>${high}</td><td>${low}</td><td>`);
+    $("#trip-table > tbody").append(`<tr><td>${high}</td><td>${low}</td><td>`);
   });
 
 }// Closes getWeather function
