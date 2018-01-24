@@ -62,13 +62,23 @@ const getFlights = () => {
   }).done(function response(response){
     console.log(response);
     let prices = response.results[0].fare.total_price;
+    let departing = response.results[0].itineraries[0].inbound.flights[0].departs_at;
+    let returning = response.results[0].itineraries[0].outbound.flights[0].departs_at;
+
     console.log(prices);
 // Loop through Key-Value pairs
     for (i = 0; i <response.results.length; i++) {
       // Access and store total_price
       prices = response.results[i].fare.total_price;
-      console.log(prices);
-       $("#trip-table > tbody").append(`<tr><td>${destination}</td><td>${departure}</td><td>${departure_date}</td><td>${return_date}</td><td>${prices}</td></tr>`
+      departing = response.results[i].itineraries[i].inbound.flights[i].departs_at;
+      returning = response.results[i].itineraries[i].outbound.flights[i].departs_at;
+
+      console.log(`prices: ${prices}`);
+      console.log(`departing: ${departing}`);
+      console.log(`returning: ${returning}`);
+
+      // Add elements to table
+       $("#trip-table > tbody").append(`<tr><td>${destination}</td><td>${departure}</td><td>${departing}</td><td>${returning}</td><td>${prices}</td></tr>`
     )}
 });
   } // closes getDeparture
