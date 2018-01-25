@@ -10,7 +10,7 @@ let radarChart = new Chart(myChart, {
 });
 function addData(weatherData) {
   // Passing the object
-  dataset = Object.values(weatherData));
+  dataset = Object.values(weatherData);
 
     chart.update();
 }
