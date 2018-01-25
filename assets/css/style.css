@@ -43,4 +43,50 @@ p {
 
 footer {
     display: block;
+
+}
+
+body{
+  background-image: url(http://www.itsfrontporch.com/wp-content/uploads/6359524176194484221446729975_travel-01.jpg);
+}
+
+#trip-table{
+  background-color: black;
+  color: white;
+  position: relative;
+  float: left;
+  margin-left: 25%;
+  padding: 2%,2%,2%,2%;
+  margin: 1%,1%,1%,1%;
+
+}
+
+#weather-table{
+  background-color: black;
+  color: white;
+  position: relative;
+  float: left;
+  padding: 2%,2%,2%,2%;
+  margin: 1%,1%,1%,1%;
+
+}
+
+h2{
+  margin-left: 25%;
+  text-align: center;
+  background-color: black;
+  color: white;
+  width: 50.7%;
+
+}
+
+#chart{
+  margin-top: 10%;
+  margin-left: 30%;
+  height: 600px;
+  width: 600px;
+}
+
+#labels{
+  color: blue;
 }

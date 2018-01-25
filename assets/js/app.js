@@ -1,5 +1,5 @@
 let apis = function (){
   getFlights();
-  getWeather();
-  addData();
+  let weatherData = getWeather();
+  addData(weatherData);
 };
