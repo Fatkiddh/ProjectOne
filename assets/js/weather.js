@@ -35,7 +35,7 @@ const getWeather = () => {
     console.log(`humidity: ${humidity}`);
 
     // Table Body is appended with interpolated temperatures
-    $("#trip-table > tbody").append(`<tr><td>${high}</td><td>${low}</td><td>`);
+    $("#weather-table > tbody").append(`<tr><td>${high}</td><td>${low}</td><td>`);
 // Object for weather data
     let weatherData = {
       humidity,
