@@ -36,7 +36,7 @@ const getWeather = () => {
 
     // Table Body is appended with interpolated temperatures
     $("#weather-table > tbody").append(`<tr><td>${high}</td><td>${low}</td><td>`);
-// Object for weather data
+    // Object for weather data
     let weatherData = {
       humidity,
       high,
@@ -45,5 +45,23 @@ const getWeather = () => {
 
     }
     return weatherData;
-});
+  });
 }// Closes getWeather function
+
+let myChart = $('#myChart')[0].getContext('2d');
+
+let radarChart = new Chart(myChart, {
+  type: 'radar',
+  data: {
+    labels: ['Humidity','High', 'Low','Current Temperature'],
+    datasets: [],
+  },
+  options:{}
+});
+
+function addData(weatherData) {
+  // Passing the object
+  dataset = Object.values(weatherData);
+
+  chart.update();
+}
