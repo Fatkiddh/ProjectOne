@@ -3,15 +3,14 @@ let myChart = $('#myChart')[0].getContext('2d');
 let radarChart = new Chart(myChart, {
   type: 'radar',
   data: {
-    labels: ['Temperature','High', 'Low','Humidity'],
+    labels: ['Humidity','High', 'Low','Current Temperature'],
     datasets: [],
   },
   options:{}
 });
-function addData(chart, label, data) {
-    chart.data.labels.push(label);
-    chart.data.datasets.forEach((dataset) => {
-        dataset.data.push(data);
-    });
+function addData(weatherData) {
+  // Passing the object
+  dataset = Object.values(weatherData));
+
     chart.update();
 }

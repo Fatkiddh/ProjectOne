@@ -45,7 +45,7 @@ $("#departureDate").change(function(){
 
 $("#returnDate").change(function(){
   return_date = $(this).val();
-  console.log(departure_date);
+  console.log(return_date);
 });
 
 $("#cost").change(function(){
@@ -70,15 +70,17 @@ const getFlights = () => {
     for (i = 0; i <response.results.length; i++) {
       // Access and store total_price
       prices = response.results[i].fare.total_price;
-      departing = response.results[i].itineraries[i].inbound.flights[i].departs_at;
-      returning = response.results[i].itineraries[i].outbound.flights[i].departs_at;
+      departing = response.results[i].itineraries[i].outbound.flights[i].departs_at;
+      returning = response.results[i].itineraries[i].inbound.flights[i].departs_at;
 
       console.log(`prices: ${prices}`);
       console.log(`departing: ${departing}`);
       console.log(`returning: ${returning}`);
+      //
+
 
       // Add elements to table
-       $("#trip-table > tbody").append(`<tr><td>${destination}</td><td>${departure}</td><td>${departing}</td><td>${returning}</td><td>${prices}</td></tr>`
-    )}
+       $("#trip-table > tbody").append(`<tr><td>${destination} | </td><td>${departure} | </td><td>${departing} | </td><td>${returning} | </td><td>$ ${prices} </td></tr>`
+    )};
 });
   } // closes getDeparture
