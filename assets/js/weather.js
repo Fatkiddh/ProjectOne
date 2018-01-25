@@ -37,31 +37,35 @@ const getWeather = () => {
     // Table Body is appended with interpolated temperatures
     $("#weather-table > tbody").append(`<tr><td>${high}</td><td>${low}</td><td>`);
     // Object for weather data
-    let weatherData = {
+    let weatherData = [
       humidity,
-      high,
-      low,
-      currentTemperature,
+      parseFloat(high),
+      parseFloat(low),
+      currentTemperature
+    ];
+    addData(weatherData);
 
-    }
-    return weatherData;
-  });
+  }); // closes AJX done
+}// Closes getWeather function
 
+function addData(weatherData) {
+  console.log('this is weatherData inside addData: ');
+  console.log(weatherData);
+  // Passing the object
   let myChart = $('#myChart')[0].getContext('2d');
 
   let radarChart = new Chart(myChart, {
     type: 'radar',
     data: {
       labels: ['Humidity','High', 'Low','Current Temperature'],
-      datasets: [],
-    },
-    options:{}
+      datasets: [{
+          label: 'Test',
+          data: weatherData
+      }],
+    }
+    // options:{}
   });
-}// Closes getWeather function
 
-function addData(weatherData) {
-  // Passing the object
-  dataset = Object.values(weatherData);
+  // dataset = Object.values(weatherData);
 
-  chart.update();
 }

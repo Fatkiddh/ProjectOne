@@ -59,28 +59,41 @@ const getFlights = () => {
     url: `https://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?apikey=${apiKey}&origin=${departure}&destination=${destination}&departure_date=${departure_date}&return_date=2018&arrive_by=${departure_date}T05%3A25&return_by=${return_date}T05%3A25&nonstop=false&max_price=${cost}&currency=USD&travel_class=ECONOMY&number_of_results=5`,
 
     method: 'GET',
-  }).done(function response(response){
+  }).done(function (response){
     console.log(response);
-    let prices = response.results[0].fare.total_price;
-    let departing = response.results[0].itineraries[0].inbound.flights[0].departs_at;
-    let returning = response.results[0].itineraries[0].outbound.flights[0].departs_at;
-
+    let prices;
+    let departing;
+    let returning;
     console.log(prices);
 // Loop through Key-Value pairs
     for (i = 0; i <response.results.length; i++) {
       // Access and store total_price
       prices = response.results[i].fare.total_price;
-      departing = response.results[i].itineraries[i].outbound.flights[i].departs_at;
-      returning = response.results[i].itineraries[i].inbound.flights[i].departs_at;
+      console.log('this is i: ' + i);
 
-      console.log(`prices: ${prices}`);
-      console.log(`departing: ${departing}`);
-      console.log(`returning: ${returning}`);
+      for (let j = 0; j < response.results[j].itineraries.length; j++){
+
+        departingFlightsArr = response.results[i].itineraries[j].outbound.flights;
+        returningFlightsArr = response.results[i].itineraries[j].inbound.flights;
+        // Outbound
+        for ( let k = 0; k < departingFlightsArr.length; k++) {
+          departing = departingFlightsArr[k].departs_at;
+        }
+        // Inbound
+        for ( let l = 0; l < returningFlightsArr.length; l++){
+          returning = returningFlightsArr[l].departs_at;
+        }
+
+        console.log(`prices: ${prices}`);
+        console.log(`departing: ${departing}`);
+        console.log(`returning: ${returning}`);
       //
 
 
-      // Add elements to table
-       $("#trip-table > tbody").append(`<tr><td>${destination} | </td><td>${departure} | </td><td>${departing} | </td><td>${returning} | </td><td>$ ${prices} </td></tr>`
-    )};
+        // Add elements to table
+         $("#trip-table > tbody").append(`<tr><td>${destination} | </td><td>${departure} | </td><td>${departing} | </td><td>${returning} | </td><td>$ ${prices} </td></tr>`
+         );
+      }
+    }
 });
   } // closes getDeparture
