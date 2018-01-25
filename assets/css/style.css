@@ -1,3 +1,14 @@
+.body {
+
+
+}
+
+#myModal {
+  color: #1E90FF;
+
+
+}
+
 .jumbotron {
    margin-bottom: 0px;
    background-image: url(http://www.itsfrontporch.com/wp-content/uploads/6359524176194484221446729975_travel-01.jpg);
@@ -5,6 +16,7 @@
    background-size: cover;
    background-repeat: no-repeat;
    color: white;
+   font-family: 'Montserrat', sans-serif;
 }
 
 .lead {
