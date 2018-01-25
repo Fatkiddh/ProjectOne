@@ -20,7 +20,7 @@
         <form action="/action_page.php">
           Departing from: <input type="text" name="airports" id="departureInput" placeholder="departure" maxlength="3">
           Arriving at: <input type="text" name="airports" id="destinationInput" placeholder="destination" maxlength="3">
-          Staying: <input type="text" name="airports" id="staying" placeholder="City?">
+          Staying: <input type="text" name="airports" id="staying" placeholder="Where are you staying?">
           Departure Date: <input id ="departureDate"type="date" name="dd">
           Return Date: <input id="returnDate"type="date" name="rd">
           Budget:$ <input id="cost"type="number" name="cost">
@@ -34,38 +34,49 @@
   </div>
 </div>
 
-<div class="containter-fluid">
+<div class="containter-fluid text-center">
   <table id="trip-table">
+    <h2 id="tripsTitle">Trips<h2>
       <thead>
         <tr class="item-2">
-          <th>Destination</th>
-          <th>Departure</th>
-          <th>Departure Date</th>
-          <th>Return Date</th>
-          <th>High</th>
-          <th>Low</th>
+          <th>Destination |</th>
+          <th>Departure |</th>
+          <th>Departure Date & time |</th>
+          <th>Return Date & time |</th>
+          <th>Price$</th>
         </tr>
       </thead>
       <tbody>
       </tbody>
     </table>
+  </div>
+    <div class="containter-fluid text-center">
+      <table id="weather-table">
+          <thead>
+            <tr class="item-2">
+              <th>High |</th>
+              <th>Low |</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+  <div class="container-fluid" id="chart">
     <canvas id="myChart" width="1600" height="900"></canvas>
   </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src="assets/js/flight.js"></script>
+  <script src="assets/js/weather.js"></script>
+  <script src="assets/js/graph.js"></script>
+  <script src="assets/js/app.js"></script>
 
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <script src="assets/js/flight.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script src="assets/js/weather.js"></script>
-    <script src="assets/js/graph.js"></script>
-
-  </body>
-  </html>
+</body>
+</html>
